@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
+import 'dart:core';
 
 void main() {
   runApp(
@@ -10,6 +13,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.indigo[300],
@@ -17,7 +23,7 @@ class MyApp extends StatelessWidget {
           toolbarHeight: 55.0,
           title: Center(
             child: Text(
-              'Scotts Flutter Card',
+              'Business Card',
               style: TextStyle(
                 fontFamily: 'Rajdhani',
                 fontSize: 34.0,
@@ -35,6 +41,9 @@ class MyApp extends StatelessWidget {
 }
 
 class ScottsCard extends StatelessWidget {
+  final uri = Uri.encodeFull(
+      'mailto:hello@domain.com?subject=Looking to hire a Front-End/API/Mobile Developer?&body=Send me the details and I will get back to you as soon as possible. Thank you.');
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -69,40 +78,46 @@ class ScottsCard extends StatelessWidget {
               child: Divider(
                 color: Colors.indigo[200],
               )),
-          Card(
-            margin: EdgeInsets.symmetric(vertical: 13.0, horizontal: 21.0),
-            child: ListTile(
-              leading: Icon(
-                Icons.phone,
-                size: 34.0,
-                color: Colors.indigo[300],
-              ),
-              title: Text(
-                '321-210-9243',
-                style: TextStyle(
+          FlatButton(
+            onPressed: () => launch('tel:+13212109243'),
+            child: Card(
+              margin: EdgeInsets.symmetric(vertical: 13.0, horizontal: 21.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  size: 34.0,
                   color: Colors.indigo[300],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21.0,
-                  fontFamily: 'Rajdhani',
+                ),
+                title: Text(
+                  '321-210-9243',
+                  style: TextStyle(
+                    color: Colors.indigo[300],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 21.0,
+                    fontFamily: 'Rajdhani',
+                  ),
                 ),
               ),
             ),
           ),
-          Card(
-            margin: EdgeInsets.symmetric(vertical: 13.0, horizontal: 21.0),
-            child: ListTile(
-              leading: Icon(
-                Icons.email,
-                size: 34.0,
-                color: Colors.indigo[300],
-              ),
-              title: Text(
-                'scottalanw@gmail.com',
-                style: TextStyle(
+          FlatButton(
+            onPressed: () => launch(uri.toString()),
+            child: Card(
+              margin: EdgeInsets.symmetric(vertical: 13.0, horizontal: 21.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  size: 34.0,
                   color: Colors.indigo[300],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21.0,
-                  fontFamily: 'Rajdhani',
+                ),
+                title: Text(
+                  'scottalanw@gmail.com',
+                  style: TextStyle(
+                    color: Colors.indigo[300],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 21.0,
+                    fontFamily: 'Rajdhani',
+                  ),
                 ),
               ),
             ),
