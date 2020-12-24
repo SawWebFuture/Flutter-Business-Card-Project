@@ -9,6 +9,7 @@ To show some sample code for future employers.
 - Built for Mobile/Web
 - Have url_launcher and opens email or phone number from app
 - Elegant layout with fibonacci sequence numbers
+- Imported Fonts & Images
 
 ## TODO
 
