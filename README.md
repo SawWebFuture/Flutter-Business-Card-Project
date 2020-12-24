@@ -14,6 +14,7 @@ To show some sample code for future employers.
 ## TODO
 
 - Add portfolio page with sample projects
+- Add HTML5 Canvas Flower Creator
 - Add more animation
 - Add url for portfolios
 - Much more
