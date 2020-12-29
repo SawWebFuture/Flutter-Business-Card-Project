@@ -17,6 +17,7 @@ To show some sample code for future employers.
 - Add HTML5 Canvas Flower Creator
 - Add more animation
 - Add url for portfolios
+- Add dreamcatcher
 - Much more
 
 Code by Scott Williams
