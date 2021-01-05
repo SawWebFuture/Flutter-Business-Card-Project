@@ -2,7 +2,7 @@
 
 ## My Goal
 
-To show some sample code for future employers.
+To show some sample code for future employers. Electronic Business Card App, Stand out today!
 
 ## What this Project has
 
